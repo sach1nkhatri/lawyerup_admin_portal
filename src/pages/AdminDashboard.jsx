@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Dashboard from '../components/Dashboard';
 import News from '../pages/NewsAdmin';
+import LawyerApprovalPanel from '../components/LawyerApprovalPanel';
+
 
 const AdminDashboard = () => {
     const [activeSection, setActiveSection] = useState('Dashboard');
@@ -13,11 +15,12 @@ const AdminDashboard = () => {
             case 'News':
                 return <News />;
             case 'Lawyers':
-                return <div><h2>Lawyers Section</h2></div>;
+                return <LawyerApprovalPanel />;
             case 'PDF Library':
                 return <div><h2>PDF Library Section</h2></div>;
             default:
                 return <div><h2>Welcome!</h2></div>;
+
         }
     };
 

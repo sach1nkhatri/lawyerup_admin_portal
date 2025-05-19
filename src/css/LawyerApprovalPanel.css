@@ -1,0 +1,28 @@
+.lawyer-approval-panel {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.lawyer-approval-panel table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.lawyer-approval-panel th, .lawyer-approval-panel td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.lawyer-approval-panel button {
+    margin-right: 8px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #1e293b;
+    color: white;
+    cursor: pointer;
+}

@@ -34,7 +34,7 @@ const NewsAdmin = () => {
 
     const handleUpdate = async (updatedItem) => {
         await axios.put(`${API_URL}/${updatedItem._id}`, updatedItem);
-        fetchNews();
+        await fetchNews();
         setEditData(null);
         showModal({
             title: "News Updated",
