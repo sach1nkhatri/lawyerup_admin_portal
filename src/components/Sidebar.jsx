@@ -1,0 +1,55 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../css/Sidebar.css';
+import logoIcon from '../assets/logo2.png';
+import logoText from '../assets/logo.png';
+import dashboardIcon from '../assets/dashboard.png';
+import lawyerIcon from '../assets/hammerwhite.png';
+import pdfIcon from '../assets/pdfweb.png';
+import logoutIcon from '../assets/logout.png';
+import NewsletterIcon from '../assets/newsWhite.png';
+
+const Sidebar = ({ activeSection, setActiveSection }) => {
+    const navigate = useNavigate();
+
+    const menuItems = [
+        { icon: dashboardIcon, label: 'Dashboard' },
+        {icon: NewsletterIcon, label: 'News' },
+        { icon: lawyerIcon, label: 'Lawyers' },
+        { icon: pdfIcon, label: 'PDF Library' },
+    ];
+
+    const handleLogout = () => {
+        localStorage.clear();
+        navigate('/login');
+    };
+
+    return (
+        <div className="admin-sidebar">
+            <div className="sidebar-header">
+                <img src={logoIcon} alt="Logo" className="sidebar-logo" />
+                <img src={logoText} alt="LawyerUp" className="sidebar-text-logo" />
+            </div>
+
+            <div className="sidebar-menu">
+                {menuItems.map((item, idx) => (
+                    <div
+                        key={idx}
+                        className={`sidebar-item ${activeSection === item.label ? 'active' : ''}`}
+                        onClick={() => setActiveSection(item.label)}
+                    >
+                        <img src={item.icon} alt={item.label} className="sidebar-icon" />
+                        <span>{item.label}</span>
+                    </div>
+                ))}
+            </div>
+
+            <div className="sidebar-footer" onClick={handleLogout}>
+                <img src={logoutIcon} alt="Logout" className="sidebar-icon" />
+                <span>Logout</span>
+            </div>
+        </div>
+    );
+};
+
+export default Sidebar;
