@@ -8,6 +8,7 @@ import lawyerIcon from '../assets/hammerwhite.png';
 import pdfIcon from '../assets/pdfweb.png';
 import logoutIcon from '../assets/logout.png';
 import NewsletterIcon from '../assets/newsWhite.png';
+import usersIcon from '../assets/user.png';
 
 const Sidebar = ({ activeSection, setActiveSection }) => {
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
         {icon: NewsletterIcon, label: 'News' },
         { icon: lawyerIcon, label: 'Lawyers' },
         { icon: pdfIcon, label: 'PDF Library' },
+        {icon: usersIcon, label: 'Registered User' },
     ];
 
     const handleLogout = () => {

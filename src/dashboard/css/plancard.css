@@ -1,0 +1,61 @@
+.plan-card {
+    flex: 1;
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.plan-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.plan-icon {
+    font-size: 32px;
+}
+.plan-card h4 {
+    font-size: 16px;
+}
+.plan-card .value {
+    font-size: 28px;
+    font-weight: bold;
+}
+.plan-card .trend {
+    font-size: 14px;
+}
+.tier-and-pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+.tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.tier-line {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.pie-wrapper-inline {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.plan-card.blue { background: #3b82f6; }
+.plan-card.yellow { background: #fff8bf; color: #000; }
+.plan-card.purple { background: #dfcbf1;color: #1f2937 }

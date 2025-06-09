@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
-import Dashboard from '../components/Dashboard';
+import Dashboard from '../dashboard/component/Dashboard';
 import News from '../pages/NewsAdmin';
 import LawyerApprovalPanel from '../components/LawyerApprovalPanel';
 
