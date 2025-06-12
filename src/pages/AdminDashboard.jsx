@@ -3,6 +3,7 @@ import Sidebar from '../components/Sidebar';
 import Dashboard from '../dashboard/component/Dashboard';
 import News from '../pages/NewsAdmin';
 import LawyerApprovalPanel from '../components/LawyerApprovalPanel';
+import PdfUploader from "../pdf_uploader/component/PdfUploader";
 
 
 const AdminDashboard = () => {
@@ -17,7 +18,7 @@ const AdminDashboard = () => {
             case 'Lawyers':
                 return <LawyerApprovalPanel />;
             case 'PDF Library':
-                return <div><h2>PDF Library Section</h2></div>;
+                return <PdfUploader/>;
             default:
                 return <div><h2>Welcome!</h2></div>;
 
