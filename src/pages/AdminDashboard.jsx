@@ -4,6 +4,7 @@ import Dashboard from '../dashboard/component/Dashboard';
 import News from '../pages/NewsAdmin';
 import LawyerApprovalPanel from '../components/LawyerApprovalPanel';
 import PdfUploader from "../pdf_uploader/component/PdfUploader";
+import FaqManager from '../../src/faq_manager/components/FaqManager';
 
 
 const AdminDashboard = () => {
@@ -19,6 +20,9 @@ const AdminDashboard = () => {
                 return <LawyerApprovalPanel />;
             case 'PDF Library':
                 return <PdfUploader/>;
+
+            case 'Help&FAQ':
+                return <FaqManager/>;
             default:
                 return <div><h2>Welcome!</h2></div>;
 

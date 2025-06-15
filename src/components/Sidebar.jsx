@@ -9,6 +9,7 @@ import pdfIcon from '../assets/pdfweb.png';
 import logoutIcon from '../assets/logout.png';
 import NewsletterIcon from '../assets/newsWhite.png';
 import usersIcon from '../assets/user.png';
+import iconHelp from '../assets/faq.png';
 
 const Sidebar = ({ activeSection, setActiveSection }) => {
     const navigate = useNavigate();
@@ -19,6 +20,7 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
         { icon: lawyerIcon, label: 'Lawyers' },
         { icon: pdfIcon, label: 'PDF Library' },
         {icon: usersIcon, label: 'Registered User' },
+        { icon: iconHelp, label: 'Help&FAQ' },
     ];
 
     const handleLogout = () => {
