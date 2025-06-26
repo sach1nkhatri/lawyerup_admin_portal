@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Dashboard from '../dashboard/component/Dashboard';
-import News from '../pages/NewsAdmin';
+import News from '../news_uploader/component/NewsAdmin';
 import LawyerApprovalPanel from '../components/LawyerApprovalPanel';
 import PdfUploader from "../pdf_uploader/component/PdfUploader";
 import FaqManager from '../../src/faq_manager/components/FaqManager';

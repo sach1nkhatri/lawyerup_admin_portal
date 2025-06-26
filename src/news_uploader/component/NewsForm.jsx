@@ -28,40 +28,32 @@ const NewsForm = ({ onSubmit, initialData, onCancel }) => {
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
-
         if (!file) return;
 
-        // 🔒 Check file size (2MB max)
-        const maxSize = 2 * 1024 * 1024; // 2MB in bytes
+        const maxSize = 2 * 1024 * 1024; // 2MB
         if (file.size > maxSize) {
-            alert("Image size must be less than 2MB.");
+            alert("Image must be less than 2MB.");
             return;
         }
 
-        // ✅ Convert to Base64 for preview/storage
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            setFormData(prev => ({
-                ...prev,
-                image: reader.result,
-                preview: reader.result,
-            }));
-        };
-        reader.readAsDataURL(file);
+        setFormData(prev => ({
+            ...prev,
+            image: file,
+            preview: URL.createObjectURL(file), // blob preview
+        }));
     };
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const finalData = {
-            ...formData,
-            image: formData.preview, // store preview URL
-            id: initialData?.id || Date.now(),
-        };
+        const data = new FormData();
+        data.append('title', formData.title);
+        data.append('author', formData.author);
+        data.append('summary', formData.summary);
+        data.append('date', formData.date);
+        if (formData.image) data.append('image', formData.image);
 
-        onSubmit(finalData);
-
+        onSubmit(data); // pass FormData
         setFormData({
             title: '',
             author: '',
@@ -71,6 +63,7 @@ const NewsForm = ({ onSubmit, initialData, onCancel }) => {
             preview: '',
         });
     };
+
 
     return (
         <form className="news-form" onSubmit={handleSubmit}>
@@ -84,7 +77,6 @@ const NewsForm = ({ onSubmit, initialData, onCancel }) => {
 
             <label className="upload-label">Upload Image:</label>
             <input type="file" accept="image/*" onChange={handleImageChange}/>
-
             <img
                 src={formData.preview}
                 alt="Preview"

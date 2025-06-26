@@ -8,7 +8,7 @@ const NewsList = ({ newsItems, onEdit, onDelete }) => {
             <div className="news-list-grid">
                 {newsItems.map((item) => (
                     <div className="news-list-card" key={item.id}>
-                        <img src={item.image} alt="news" />
+                        <img src={`http://localhost:5000${item.image}`} alt="news"/>
                         <div className="news-list-content">
                             <h4>{item.title}</h4>
                             <p className="news-meta">By {item.author} on {item.date}</p>

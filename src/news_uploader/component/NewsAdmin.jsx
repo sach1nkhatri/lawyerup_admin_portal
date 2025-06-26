@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import NewsForm from '../components/NewsForm';
-import NewsList from '../components/NewsList';
-import { useModal } from '../context/ModalContext';
+import NewsForm from './NewsForm';
+import NewsList from './NewsList';
+import { useModal } from '../../context/ModalContext';
 import axios from 'axios';
 import '../css/NewsAdmin.css';
 
@@ -22,26 +22,31 @@ const NewsAdmin = () => {
         setNews(res.data);
     };
 
-    const handleCreate = async (newItem) => {
-        await axios.post(API_URL, newItem);
-        fetchNews(); // refresh
+    const handleCreate = async (formData) => {
+        await axios.post(API_URL, formData, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        });
+        fetchNews();
         showModal({
             title: "News Created",
-            message: `"${newItem.title}" has been added successfully!`,
+            message: "News has been added successfully!",
             confirmText: "Close",
         });
     };
 
-    const handleUpdate = async (updatedItem) => {
-        await axios.put(`${API_URL}/${updatedItem._id}`, updatedItem);
-        await fetchNews();
+    const handleUpdate = async (formData) => {
+        await axios.put(`${API_URL}/${editData._id}`, formData, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        });
+        fetchNews();
         setEditData(null);
         showModal({
             title: "News Updated",
-            message: `"${updatedItem.title}" has been updated.`,
+            message: "News has been updated.",
             confirmText: "Got it",
         });
     };
+
 
     const handleDelete = (id) => {
         const item = news.find(n => n.id === id);
