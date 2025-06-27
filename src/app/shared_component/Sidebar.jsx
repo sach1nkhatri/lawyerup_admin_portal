@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/Sidebar.css';
+import './Sidebar.css';
 import logoIcon from '../assets/logo2.png';
 import logoText from '../assets/logo.png';
 import dashboardIcon from '../assets/dashboard.png';

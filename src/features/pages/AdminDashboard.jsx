@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../../app/shared_component/Sidebar';
 import Dashboard from '../dashboard/component/Dashboard';
 import News from '../news_uploader/component/NewsAdmin';
-import LawyerApprovalPanel from '../components/LawyerApprovalPanel';
+import LawyerApprovalPanel from '../Lawyer_control/component/LawyerApprovalPanel';
 import PdfUploader from "../pdf_uploader/component/PdfUploader";
-import FaqManager from '../../src/faq_manager/components/FaqManager';
+import FaqManager from '../faq_manager/components/FaqManager';
 
 
 const AdminDashboard = () => {

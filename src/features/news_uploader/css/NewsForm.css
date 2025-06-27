@@ -1,0 +1,111 @@
+.news-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    max-width: 720px;
+    width: 100%;
+}
+
+/* Card-style form */
+.news-form {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Headline */
+.news-form h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+    text-align: center;
+}
+
+/* Inputs */
+.news-form input,
+.news-form textarea {
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    background-color: #f9fafb;
+    transition: 0.2s ease;
+}
+
+.news-form input:focus,
+.news-form textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #fff;
+}
+
+.news-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Label for image */
+.upload-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #111827;
+    margin-top: 0.5rem;
+}
+
+/* Image preview */
+.image-preview {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+/* Button group */
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+/* Buttons */
+.form-buttons button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.submit-btn {
+    background-color: #10b981;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #0f766e;
+    transform: scale(1.03);
+}
+
+.cancel-btn {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+.cancel-btn:hover {
+    background-color: #e5e7eb;
+    transform: scale(1.02);
+}
