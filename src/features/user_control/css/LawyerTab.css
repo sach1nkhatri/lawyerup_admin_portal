@@ -1,0 +1,9 @@
+.lawyer-tab-wrapper {
+    padding: 10px;
+}
+
+.lawyer-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}

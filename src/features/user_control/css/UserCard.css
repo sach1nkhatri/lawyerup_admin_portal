@@ -1,0 +1,61 @@
+.user-card {
+    width: 280px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.plan-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.plan-badge.free {
+    background: #999;
+}
+.plan-badge.basic {
+    background: #007bff;
+}
+.plan-badge.premium {
+    background: #28a745;
+}
+
+.user-meta p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.user-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.user-actions button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    background: #3f51b5;
+    color: white;
+    transition: 0.2s ease;
+}
+
+.user-actions button:hover {
+    background: #2c3a87;
+}

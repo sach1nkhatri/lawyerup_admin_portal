@@ -1,0 +1,17 @@
+.lawyer-card {
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: 260px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.lawyer-card h4 {
+    margin: 0 0 4px 0;
+}
+
+.lawyer-card p {
+    margin: 4px 0;
+    font-size: 14px;
+}

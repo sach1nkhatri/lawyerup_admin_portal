@@ -1,0 +1,39 @@
+.payment-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    background: #f8f8f8;
+}
+
+.screenshot-preview img {
+    width: 120px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+.action-buttons button {
+    margin: 6px 6px 0 0;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.approve {
+    background: #28a745;
+    color: white;
+}
+
+.reject {
+    background: #dc3545;
+    color: white;
+}
+
+.hold {
+    background: #ffc107;
+    color: black;
+}

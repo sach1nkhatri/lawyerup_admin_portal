@@ -1,0 +1,29 @@
+.user-tab-wrapper {
+    padding: 10px;
+}
+
+.sub-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.sub-tabs button {
+    padding: 8px 16px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sub-tabs button.active {
+    background-color: #3f51b5;
+    color: white;
+}
+
+.user-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}

@@ -1,0 +1,9 @@
+.payment-tab-wrapper {
+    padding: 10px;
+}
+
+.payment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

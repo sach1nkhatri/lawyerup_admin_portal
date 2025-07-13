@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/LawyerApprovalPanel.css';
+import '../css/LawyerApprovalPane.css';
 import { useLawyerApprovalPanel } from '../hooks/useLawyerApprovalPanel';
 import LawyerCard from './LawyerCard';
 

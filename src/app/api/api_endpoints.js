@@ -32,7 +32,7 @@ const API = {
     NEWS: {
         GET_ALL: `${BASE_URL}news`,
         CREATE: `${BASE_URL}news`,
-        UPDATE: (id) => `${BASE_URL}news/${id}`, // ✅ NOT 'update/${id}'
+        UPDATE: (id) => `${BASE_URL}news/${id}`,
         DELETE: (id) => `${BASE_URL}news/${id}`,
     },
     //------------------- PDF Management---------------------
@@ -42,11 +42,12 @@ const API = {
         DELETE: (id) => `${BASE_URL}pdfs/${id}`,
     },
 
-    // ------------------ Analytics (Example) ------------------
+    // ------------------ Analytics (future update) ------------------
     ANALYTICS: {
         REVENUE_STATS: `${BASE_URL}analytics/revenue`,
         USER_PLANS: `${BASE_URL}analytics/user-plans`,
     },
+
 };
 
 export default API;
