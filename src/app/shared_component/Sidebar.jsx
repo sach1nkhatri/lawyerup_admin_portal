@@ -24,8 +24,9 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
     ];
 
     const handleLogout = () => {
-        localStorage.clear();
-        navigate('/login');
+        localStorage.removeItem('lawyerup_token'); // clear only token (or clear all if needed)
+        localStorage.removeItem('lawyerup_user');  // if you're storing user info
+        navigate('/login'); // or replace('/login') to avoid going back
     };
 
     return (

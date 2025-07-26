@@ -22,7 +22,7 @@ const API = {
     },
 
     // ------------------ Auth ------------------
-    ADMIN_LOGIN: `${BASE_URL}auth/admin-login`,
+    ADMIN_LOGIN: `${BASE_URL}auth/admin/login`,
     VERIFY_ADMIN: `${BASE_URL}auth/verify-token`,
     GET_ALL_USERS: `${BASE_URL}auth/all-users`,
     USER_STATUS_UPDATE: (id) => `${BASE_URL}auth/status/${id}`,
