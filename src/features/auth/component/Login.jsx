@@ -33,7 +33,7 @@ const Login = () => {
         const token = localStorage.getItem('lawyerup_token');
         if (token) {
             axios
-                .get(API.VERIFY_ADMIN, {
+                .get(API.ADMIN_LOGIN, {
                     headers: { Authorization: `Bearer ${token}` }
                 })
                 .then(() => navigate('/admin'))
