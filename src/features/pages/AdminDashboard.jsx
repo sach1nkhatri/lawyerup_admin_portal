@@ -6,6 +6,7 @@ import LawyerApprovalPanel from '../Lawyer_control/component/LawyerApprovalPanel
 import PdfUploader from "../pdf_uploader/component/PdfUploader";
 import FaqManager from '../faq_manager/components/FaqManager';
 import UserControlTabs from "../user_control/component/UserControlTabs";
+import UserReport from '../reports/component/ReportViewer';
 
 
 const AdminDashboard = () => {
@@ -27,6 +28,9 @@ const AdminDashboard = () => {
 
             case 'Registered User':
                 return <UserControlTabs />;
+
+            case 'User Report':
+                return <UserReport />;
             default:
                 return <div><h2>Welcome!</h2></div>;
 

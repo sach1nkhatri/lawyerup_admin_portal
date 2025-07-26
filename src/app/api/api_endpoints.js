@@ -60,7 +60,12 @@ const API = {
         USER_LATEST: `${BASE_URL}manual-payment/user`,
         DOWNGRADE_EXPIRED: `${BASE_URL}manual-payment/downgrade/expired`,
         USERS_WITH_PAYMENTS: `${BASE_URL}manual-payment/users-with-payments`,
-    }
+    },
+    REPORTS: {
+        GET_ALL: `${BASE_URL}report`,
+        UPDATE_STATUS: (id) => `${BASE_URL}report/${id}/status`
+    },
+
 
 };
 
