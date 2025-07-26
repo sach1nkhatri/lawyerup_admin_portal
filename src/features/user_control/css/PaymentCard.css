@@ -3,37 +3,114 @@
     padding: 16px;
     border-radius: 10px;
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
     background: #f8f8f8;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.payment-card > div {
+    flex: 1;
+    min-width: 200px;
+}
+
+.payment-card p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #333;
 }
 
 .screenshot-preview img {
-    width: 120px;
+    width: 140px;
     height: auto;
     border-radius: 6px;
     border: 1px solid #aaa;
+    object-fit: contain;
+    background: white;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .action-buttons button {
-    margin: 6px 6px 0 0;
-    padding: 6px 12px;
-    border-radius: 5px;
+    padding: 8px 12px;
+    border-radius: 6px;
     border: none;
-    cursor: pointer;
     font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .approve {
-    background: #28a745;
+    background-color: #28a745;
     color: white;
 }
 
 .reject {
-    background: #dc3545;
+    background-color: #dc3545;
     color: white;
 }
 
-.hold {
-    background: #ffc107;
-    color: black;
+.approve:hover {
+    background-color: #218838;
+}
+
+.reject:hover {
+    background-color: #c82333;
+}
+
+/* Optional badge if you want to show status */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.status-approved {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status-expired {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+/* Fullscreen modal */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    background: white;
+    object-fit: contain;
 }

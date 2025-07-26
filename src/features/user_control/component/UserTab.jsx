@@ -1,70 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../../user_control/css/UserTab.css';
-import UserCard from './UserCard'; // placeholder for actual user display
-
-const mockUsers = [
-    {
-        _id: '1',
-        fullName: 'Ram Patel',
-        email: 'ram@gmail.com',
-        plan: 'Free',
-        status: 'active',
-        validUntil: null,
-    },
-    {
-        _id: '2',
-        fullName: 'Anisha Sharma',
-        email: 'anisha@lawyerup.com',
-        plan: 'Premium',
-        status: 'active',
-        validUntil: '2025-07-30',
-    },
-    {
-        _id: '3',
-        fullName: 'Sita Lama',
-        email: 'sita@gmail.com',
-        plan: 'Basic',
-        status: 'hold',
-        validUntil: '2025-07-20',
-    },
-];
+import UserCard from './UserCard';
+import useUsers from '../hooks/useUsers';
 
 const UserTab = () => {
-    const [filter, setFilter] = useState('All');
-    const [users, setUsers] = useState([]);
+    const { users, loading } = useUsers();
+    const [planFilter, setPlanFilter] = useState('All');
 
-    useEffect(() => {
-        // Replace this with actual API call
-        setUsers(mockUsers);
-    }, []);
-
-    const filteredUsers = filter === 'All'
-        ? users
-        : users.filter(user => user.plan === filter);
+    const filteredUsers = users.filter(user =>
+        planFilter === 'All' || user.plan?.toLowerCase() === planFilter.toLowerCase()
+    );
 
     return (
         <div className="user-tab-wrapper">
+            <h3>🧑‍💼 User Control Panel</h3>
+
             <div className="sub-tabs">
-                {['All', 'Free', 'Basic', 'Premium'].map((type) => (
+                <strong>Plan: </strong>
+                {['All', 'Free Trial', 'Basic Plan', 'Premium Plan'].map((type) => (
                     <button
                         key={type}
-                        className={filter === type ? 'active' : ''}
-                        onClick={() => setFilter(type)}
+                        className={planFilter === type ? 'active' : ''}
+                        onClick={() => setPlanFilter(type)}
                     >
                         {type}
                     </button>
                 ))}
             </div>
 
-            <div className="user-list">
-                {filteredUsers.length === 0 ? (
-                    <p>No users found for "{filter}"</p>
-                ) : (
-                    filteredUsers.map((user) => (
-                        <UserCard key={user._id} user={user} />
-                    ))
-                )}
-            </div>
+            {loading ? (
+                <p>Loading users...</p>
+            ) : (
+                <div className="user-list">
+                    {filteredUsers.length === 0 ? (
+                        <p>No users match the filters</p>
+                    ) : (
+                        filteredUsers.map((user) => (
+                            <UserCard key={user._id} user={user} />
+                        ))
+                    )}
+                </div>
+            )}
         </div>
     );
 };

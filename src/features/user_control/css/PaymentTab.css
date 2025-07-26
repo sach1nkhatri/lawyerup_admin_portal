@@ -7,3 +7,24 @@
     flex-direction: column;
     gap: 16px;
 }
+.status-tabs {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.status-tab-btn {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e0e0e0;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.status-tab-btn.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}

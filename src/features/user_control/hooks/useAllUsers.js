@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import API from '../../app/api/api_endpoints';
+import API from '../../../app/api/api_endpoints';
 
 const useAllUsers = () => {
   const [users, setUsers] = useState([]);
@@ -9,8 +9,8 @@ const useAllUsers = () => {
   const fetchAllUsers = async () => {
     try {
       const token = localStorage.getItem('lawyerup_token');
-      const res = await axios.get(`${API.REGISTREEDUSER}`, {
-        headers: { Authorization: `Bearer ${token}` }
+      const res = await axios.get(API.GET_ALL_USERS, {
+        headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data);
     } catch (err) {

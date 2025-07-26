@@ -7,6 +7,8 @@ const API = {
     UPLOADS_URL,
     SERVER_URL,
 
+
+
     // ------------------ Lawyer Endpoints ------------------
     GET_ALL_LAWYERS: `${BASE_URL}lawyers`,
     UPDATE_LAWYER_STATUS: (id) => `${BASE_URL}lawyers/${id}/status`,
@@ -22,6 +24,8 @@ const API = {
     // ------------------ Auth ------------------
     ADMIN_LOGIN: `${BASE_URL}auth/admin-login`,
     VERIFY_ADMIN: `${BASE_URL}auth/verify-token`,
+    GET_ALL_USERS: `${BASE_URL}auth/all-users`,
+    USER_STATUS_UPDATE: (id) => `${BASE_URL}auth/status/${id}`,
 
     // ------------------ File Uploads ------------------
     UPLOAD_PDF: `${BASE_URL}upload/pdf`,
@@ -47,6 +51,16 @@ const API = {
         REVENUE_STATS: `${BASE_URL}analytics/revenue`,
         USER_PLANS: `${BASE_URL}analytics/user-plans`,
     },
+
+// ------------------ Payment & User Plan ------------------
+    PAYMENTS: {
+        GET_ALL: `${BASE_URL}manual-payment`,
+        APPROVE: (id) => `${BASE_URL}manual-payment/${id}/approve`,
+        REJECT: (id) => `${BASE_URL}manual-payment/${id}/reject`,
+        USER_LATEST: `${BASE_URL}manual-payment/user`,
+        DOWNGRADE_EXPIRED: `${BASE_URL}manual-payment/downgrade/expired`,
+        USERS_WITH_PAYMENTS: `${BASE_URL}manual-payment/users-with-payments`,
+    }
 
 };
 

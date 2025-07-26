@@ -1,58 +1,46 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../css/LawyerTab.css';
-import axios from 'axios';
-import API from '../../../app/api/api_endpoints';
+import useLawyers from '../hooks/useLawyers';
 import LawyerCard from './LawyerCard';
 
 const LawyerTab = () => {
-    const [lawyers, setLawyers] = useState([]);
-    const [filter, setFilter] = useState('All');
+    const { lawyers, loading } = useLawyers();
+    const [planFilter, setPlanFilter] = useState('All');
 
-    const fetchLawyers = async () => {
-        try {
-            const token = localStorage.getItem('lawyerup_token');
-            const res = await axios.get(API.LAWYERS, {
-                headers: { Authorization: `Bearer ${token}` }
-            });
-            setLawyers(res.data);
-        } catch (err) {
-            console.error('Failed to load lawyers', err);
-        }
-    };
-
-    useEffect(() => {
-        fetchLawyers();
-    }, []);
-
-    const filteredLawyers = filter === 'All'
-        ? lawyers
-        : lawyers.filter(lawyer => lawyer.plan === filter);
+    const filteredLawyers = lawyers.filter((lawyer) => {
+        return planFilter === 'All' || lawyer.plan?.toLowerCase() === planFilter.toLowerCase();
+    });
 
     return (
         <div className="lawyer-tab-wrapper">
-            <h3>👨‍⚖️ Registered Lawyers</h3>
+            <h3>👨‍⚖️ Lawyer Control Panel</h3>
 
             <div className="sub-tabs">
-                {['All', 'Free', 'Basic', 'Premium'].map((type) => (
+                <strong>Plan: </strong>
+                {['All', 'Free Trial', 'Basic Plan', 'Premium Plan'].map((type) => (
                     <button
                         key={type}
-                        className={filter === type ? 'active' : ''}
-                        onClick={() => setFilter(type)}
+                        className={planFilter === type ? 'active' : ''}
+                        onClick={() => setPlanFilter(type)}
                     >
                         {type}
                     </button>
                 ))}
             </div>
 
-            <div className="lawyer-list">
-                {filteredLawyers.length === 0 ? (
-                    <p>No lawyers under "{filter}"</p>
-                ) : (
-                    filteredLawyers.map((lawyer) => (
-                        <LawyerCard key={lawyer._id} lawyer={lawyer} />
-                    ))
-                )}
-            </div>
+            {loading ? (
+                <p>Loading lawyers...</p>
+            ) : (
+                <div className="lawyer-list">
+                    {filteredLawyers.length === 0 ? (
+                        <p>No lawyers match the filters</p>
+                    ) : (
+                        filteredLawyers.map((lawyer) => (
+                            <LawyerCard key={lawyer._id} lawyer={lawyer} />
+                        ))
+                    )}
+                </div>
+            )}
         </div>
     );
 };
