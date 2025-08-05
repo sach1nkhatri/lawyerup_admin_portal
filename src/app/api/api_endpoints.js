@@ -48,8 +48,8 @@ const API = {
 
     // ------------------ Analytics (future update) ------------------
     ANALYTICS: {
-        REVENUE_STATS: `${BASE_URL}analytics/revenue`,
-        USER_PLANS: `${BASE_URL}analytics/user-plans`,
+        MONTHLY: `${BASE_URL}analytics`,
+        LIFETIME: `${BASE_URL}analytics/lifetime`
     },
 
 // ------------------ Payment & User Plan ------------------
