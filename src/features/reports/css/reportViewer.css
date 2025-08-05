@@ -1,0 +1,88 @@
+.report-view-container {
+    padding: 24px;
+    background: #f9fafb;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.report-view-container h2 {
+    margin-bottom: 16px;
+    color: #111827;
+}
+
+.report-view-tabs {
+    margin-bottom: 16px;
+}
+
+.report-view-tabs button {
+    margin-right: 10px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e5e7eb;
+    color: #374151;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.report-view-tabs button.active-tab {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.report-view-empty {
+    color: #6b7280;
+    font-style: italic;
+}
+
+.report-view-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.report-view-card {
+    background-color: white;
+    border-left: 6px solid #9ca3af;
+    padding: 16px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.report-view-card.pending {
+    border-color: #f59e0b;
+}
+
+.report-view-card.fixed {
+    border-color: #10b981;
+}
+
+.report-view-meta p {
+    margin: 2px 0;
+    color: #374151;
+    font-size: 14px;
+}
+
+.report-view-msg {
+    margin-top: 12px;
+    font-size: 15px;
+    color: #1f2937;
+}
+
+.report-view-actions {
+    margin-top: 12px;
+}
+
+.report-view-actions button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3b82f6;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.report-view-actions button:hover {
+    background-color: #2563eb;
+}
